@@ -153,6 +153,7 @@ All errors are returned with appropriate HTTP status codes and detailed error me
 The following performance test was conducted on a MacBook Pro using wrk HTTP benchmarking tool:
 
 ```
+Running performance test with wrk...
 Duration: 30s
 Threads: 4
 Connections: 100
@@ -162,24 +163,23 @@ Using script: tracking_number_perf_test.lua
 Running 30s test @ http://localhost:8080
   4 threads and 100 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    18.50ms   29.77ms 403.95ms   96.70%
-    Req/Sec     1.58k   339.14     2.06k    87.88%
-  186546 requests in 30.04s, 46.97MB read
-Requests/sec:   6209.03
-Transfer/sec:      1.56MB
+    Latency    13.31ms    3.92ms 134.95ms   98.39%
+    Req/Sec     1.72k   179.72     2.01k    84.17%
+  205266 requests in 30.02s, 51.68MB read
+Requests/sec:   6836.89
+Transfer/sec:      1.72MB
 ---------------------------------------------
 Test Summary:
-  Total Requests: 186546
-  Total Duration: 30.04 seconds
-  Requests/sec: 6209.03
-  Mean Latency: 18.50 ms
-  Max Latency: 403.95 ms
+  Total Requests: 205266
+  Total Duration: 30.02 seconds
+  Requests/sec: 6836.89
+  Mean Latency: 13.31 ms
+  Max Latency: 134.95 ms
 ---------------------------------------------
 ```
 
 These results demonstrate the high performance capabilities of the reactive architecture:
-- Processing over 6,200 requests per second
-- Average latency of just 18.5ms
+- Processing over 6,800 requests per second
+- Average latency of just 13.31ms
 - Handling 100 concurrent connections with only 4 threads
-- Efficient memory usage with only 1.56MB/sec transfer rate
-
+- Efficient memory usage with only 1.72MB/sec transfer rate
